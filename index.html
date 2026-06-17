@@ -28,53 +28,102 @@ body{
 
 .banner{
     display:block;
-    margin:0 auto 40px auto;
-    max-width:700px;
-    width:100%;
+    margin:0 auto 42px auto;
+    width:auto;
     height:auto;
+    max-width:700px;
 }
 
 h1{
-    font-size:clamp(2rem, 5vw, 4rem);
+    font-size:clamp(2.4rem, 5vw, 4.6rem);
     text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:15px;
+    letter-spacing:4px;
+    line-height:1.05;
+    margin-bottom:10px;
+    font-weight:800;
 }
 
-p{
+.country{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:22px;
+    margin-bottom:26px;
+}
+
+.country::before,
+.country::after{
+    content:"";
+    width:180px;
+    height:2px;
+    background:#fff;
+    opacity:0.85;
+}
+
+.country span{
+    font-size:clamp(1.1rem, 2vw, 1.7rem);
+    letter-spacing:7px;
+    text-transform:uppercase;
+    font-weight:600;
+    color:#f0f0f0;
+}
+
+.subtitle{
     font-size:1.2rem;
-    color:#d0d0d0;
-    margin-bottom:30px;
+    color:#d8d8d8;
+    margin-bottom:32px;
+    line-height:1.5;
 }
 
 .badge{
     display:inline-block;
-    padding:12px 24px;
+    padding:13px 26px;
     border:1px solid #fff;
     border-radius:6px;
     font-weight:bold;
     text-transform:uppercase;
     letter-spacing:1px;
+    margin-bottom:28px;
 }
 
 .note{
-    margin-top:25px;
-    color:#999;
-    font-size:0.95rem;
+    color:#9f9f9f;
+    font-size:1rem;
+    line-height:1.5;
 }
 
 @media (max-width:768px){
 
     .container{
-        padding:20px 15px;
+        padding:28px 20px;
     }
 
     .banner{
-        margin-bottom:30px;
+        max-width:100%;
+        margin-bottom:38px;
     }
 
-    p{
-        font-size:1rem;
+    h1{
+        font-size:clamp(2.1rem, 10vw, 3.4rem);
+        letter-spacing:3px;
+    }
+
+    .country{
+        gap:14px;
+    }
+
+    .country::before,
+    .country::after{
+        width:80px;
+    }
+
+    .country span{
+        font-size:1.15rem;
+        letter-spacing:5px;
+    }
+
+    .subtitle{
+        font-size:1.05rem;
     }
 }
 </style>
@@ -86,9 +135,13 @@ p{
 
     <img src="cougar_banner.png" alt="Ford Cougar Club Italia" class="banner">
 
-    <h1>Ford Cougar Club Italia</h1>
+    <h1>Ford Cougar Club</h1>
 
-    <p>
+    <div class="country">
+        <span>Italia</span>
+    </div>
+
+    <p class="subtitle">
         Il sito ufficiale della community italiana dedicata alla Ford Cougar.
     </p>
 
@@ -96,9 +149,9 @@ p{
         Sito in costruzione
     </div>
 
-    <div class="note">
+    <p class="note">
         Presto online con storia del modello, galleria fotografica, eventi e community.
-    </div>
+    </p>
 
 </div>
 
