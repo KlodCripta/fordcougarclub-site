@@ -3,29 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ford Cougar Club Italia - La community italiana dedicata alla Ford Cougar. Sito in costruzione.">
+<meta name="robots" content="index, follow">
 <title>Ford Cougar Club Italia</title>
-
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 body{
-    background:#000;
+    background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000 70%);
     color:#fff;
     font-family:Arial, Helvetica, sans-serif;
     min-height:100vh;
 }
-
 .container{
     max-width:1200px;
     margin:0 auto;
     padding:40px 20px 60px;
     text-align:center;
+    animation: fadeIn 1s ease-out;
 }
-
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(12px); }
+    to{ opacity:1; transform:translateY(0); }
+}
 .banner{
     display:block;
     margin:0 auto 40px;
@@ -36,7 +39,6 @@ body{
     border-radius:8px;
     box-shadow:0 0 12px rgba(255,255,255,0.15);
 }
-
 h1{
     font-size:clamp(2.4rem, 5vw, 4.8rem);
     font-weight:800;
@@ -44,7 +46,6 @@ h1{
     text-transform:uppercase;
     margin-bottom:12px;
 }
-
 .country{
     display:flex;
     align-items:center;
@@ -52,7 +53,6 @@ h1{
     gap:24px;
     margin-bottom:28px;
 }
-
 .country::before,
 .country::after{
     content:"";
@@ -61,21 +61,18 @@ h1{
     background:#fff;
     opacity:0.85;
 }
-
 .country span{
     font-size:clamp(1.1rem, 2vw, 1.8rem);
     letter-spacing:6px;
     text-transform:uppercase;
     font-weight:600;
 }
-
 .subtitle{
     font-size:1.25rem;
     color:#ddd;
     line-height:1.6;
     margin-bottom:32px;
 }
-
 .badge{
     display:inline-block;
     padding:14px 28px;
@@ -86,89 +83,96 @@ h1{
     letter-spacing:1px;
     margin-bottom:30px;
 }
-
 .note{
     color:#b5b5b5;
     font-size:1rem;
     line-height:1.6;
     max-width:700px;
-    margin:0 auto;
+    margin:0 auto 36px;
 }
-
+.contact{
+    font-size:1rem;
+    color:#ccc;
+    margin-bottom:10px;
+}
+.contact a{
+    color:#fff;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.4);
+    transition:border-color .2s ease, color .2s ease;
+}
+.contact a:hover{
+    color:#fff;
+    border-bottom-color:#fff;
+}
 .footer-logo{
     display:block;
     margin:40px auto 0;
     width:140px;
     height:auto;
 }
-
 @media (max-width:768px){
     .container{
         padding:25px 15px 50px;
     }
-
     .banner{
         max-width:100%;
         margin-bottom:30px;
     }
-
     h1{
         font-size:clamp(2rem, 10vw, 3.5rem);
         letter-spacing:2px;
     }
-
     .country{
         gap:12px;
     }
-
     .country::before,
     .country::after{
         width:70px;
     }
-
     .country span{
         letter-spacing:4px;
         font-size:1rem;
     }
-
     .subtitle{
         font-size:1.05rem;
     }
-
     .footer-logo{
         width:110px;
     }
 }
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
     <img src="cougar_banner.png" alt="Ford Cougar Club Italia" class="banner">
-
     <h1>Ford Cougar Club</h1>
-
     <div class="country">
         <span>Italia</span>
     </div>
-
     <p class="subtitle">
         Il sito ufficiale della community italiana dedicata alla Ford Cougar.
     </p>
-
     <div class="badge">
         Sito in costruzione
     </div>
-
     <p class="note">
         Presto online con storia del modello, galleria fotografica, eventi e community.
     </p>
-
+    <p class="contact">
+        Per informazioni: <a href="#" id="contact-link">scrivici</a>
+    </p>
     <img src="cougar_logo.jpg" alt="Cougar Club Italia" class="footer-logo">
-
 </div>
 
+<script>
+(function(){
+    var user = "info";
+    var domain = "fordcougarclub.it";
+    var link = document.getElementById("contact-link");
+    link.href = "mailto:" + user + "@" + domain;
+    link.textContent = user + "@" + domain;
+})();
+</script>
 </body>
 </html>
