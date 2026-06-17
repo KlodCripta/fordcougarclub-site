@@ -6,35 +6,73 @@
 <title>Ford Cougar Club Italia</title>
 
 <style>
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
     background:#111;
     color:#fff;
-    font-family:Arial, sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+}
+
+.hero{
+    position:relative;
     height:100vh;
+    background:url('cougar_banner.png') center center / cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
 }
 
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.65);
+}
+
+.content{
+    position:relative;
+    z-index:1;
+    padding:20px;
+}
+
 h1{
-    font-size:3rem;
-    margin-bottom:10px;
+    font-size:clamp(2rem,5vw,4rem);
+    margin-bottom:15px;
+    text-transform:uppercase;
+    letter-spacing:2px;
 }
 
 p{
-    color:#ccc;
+    font-size:clamp(1rem,2vw,1.3rem);
+    color:#d0d0d0;
+}
+
+.badge{
+    margin-top:25px;
+    display:inline-block;
+    padding:12px 24px;
+    border:1px solid #fff;
+    border-radius:4px;
+    font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<div>
-    <h1>Ford Cougar Club Italia</h1>
-    <p>Sito in costruzione</p>
-</div>
+<section class="hero">
+    <div class="content">
+        <h1>Ford Cougar Club Italia</h1>
+        <p>Il sito ufficiale della community italiana dedicata alla Ford Cougar.</p>
+        <div class="badge">SITO IN COSTRUZIONE</div>
+    </div>
+</section>
 
 </body>
 </html>
