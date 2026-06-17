@@ -31,13 +31,21 @@ body{
 }
 .banner{
     display:block;
-    margin:0 auto 40px;
+    margin:0 auto 12px;
     max-width:700px;
     width:100%;
     height:auto;
     border:2px solid rgba(255,255,255,0.85);
     border-radius:8px;
     box-shadow:0 0 12px rgba(255,255,255,0.15);
+}
+.banner-caption{
+    font-style:italic;
+    font-size:0.8rem;
+    color:#888;
+    max-width:700px;
+    margin:0 auto 40px;
+    line-height:1.5;
 }
 h1{
     font-size:clamp(2.4rem, 5vw, 4.8rem);
@@ -96,14 +104,18 @@ h1{
     margin-bottom:10px;
 }
 .contact a{
+    display:inline-block;
     color:#fff;
     text-decoration:none;
-    border-bottom:1px solid rgba(255,255,255,0.4);
-    transition:border-color .2s ease, color .2s ease;
+    padding:10px 20px;
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:6px;
+    transition:background-color .2s ease, border-color .2s ease, transform .2s ease;
 }
 .contact a:hover{
-    color:#fff;
-    border-bottom-color:#fff;
+    background-color:rgba(255,255,255,0.1);
+    border-color:#fff;
+    transform:translateY(-2px);
 }
 .footer-logo{
     display:block;
@@ -117,6 +129,10 @@ h1{
     }
     .banner{
         max-width:100%;
+        margin-bottom:10px;
+    }
+    .banner-caption{
+        font-size:0.75rem;
         margin-bottom:30px;
     }
     h1{
@@ -146,6 +162,7 @@ h1{
 <body>
 <div class="container">
     <img src="cougar_banner.png" alt="Ford Cougar Club Italia" class="banner">
+    <p class="banner-caption">*Banner storico del primo Ford Cougar Club italiano mantenuto come omaggio alle sue origini</p>
     <h1>Ford Cougar Club</h1>
     <div class="country">
         <span>Italia</span>
