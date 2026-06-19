@@ -233,7 +233,7 @@ body > .nav-dropdown {
 .hero-content {
   max-width: 900px;
   margin: 0 auto;
-  padding: 24px 24px 90px;
+  padding: 12px 24px 90px;
   text-align: center;
 }
 
@@ -370,7 +370,7 @@ body > .nav-dropdown {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: var(--red);
+  background: var(--white);
 }
 
 .text-column-inner::before { left: 0; }
@@ -380,7 +380,7 @@ body > .nav-dropdown {
   position: absolute;
   width: 16px;
   height: 2px;
-  background: var(--red);
+  background: var(--white);
 }
 
 .text-tick.tl { top: 0; left: 0; }
@@ -583,7 +583,7 @@ body > .nav-dropdown {
   .footer-signature { flex-direction: column; gap: 10px; }
   .footer-signature-text { font-size: 14px; }
 
-  .hero-content { padding: 44px 16px 70px; }
+  .hero-content { padding: 20px 16px 70px; }
   .hero-country { gap: 12px; }
   .hero-country::before,
   .hero-country::after { width: 60px; }
