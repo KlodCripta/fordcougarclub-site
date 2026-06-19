@@ -57,16 +57,15 @@ a { color: inherit; text-decoration: none; }
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
-  padding: 8px;
-  background: var(--white);
-  border-radius: var(--radius);
-  display: block;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  overflow: hidden;
 }
 
 .banner-img img {
   width: 100%;
   display: block;
-  border-radius: 2px;
 }
 
 .banner-caption {
@@ -238,16 +237,16 @@ body > .nav-dropdown {
   float: left;
   width: 320px;
   margin: 0 28px 16px 0;
-  padding: 8px;
-  background: var(--white);
-  border-radius: var(--radius);
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  overflow: hidden;
 }
 
 .description-image img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 2px;
   display: block;
 }
 
@@ -449,7 +448,6 @@ body > .nav-dropdown {
     width: 100%;
     max-width: 380px;
     margin: 0 auto 24px;
-    padding: 6px;
   }
   .description-image img { height: 240px; }
   .text-column-inner { padding: 24px 18px; }
