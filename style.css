@@ -145,7 +145,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  z-index: 10;
+  z-index: 1001;
   box-shadow: var(--shadow);
 }
 
@@ -225,7 +225,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .description-image {
-  width: 560px;
+  width: 380px;
   max-width: 100%;
   margin: 0 auto 36px;
   padding: 8px;
@@ -235,7 +235,7 @@ a { color: inherit; text-decoration: none; }
 
 .description-image img {
   width: 100%;
-  height: 360px;
+  height: 260px;
   object-fit: cover;
   border-radius: 2px;
   display: block;
@@ -414,5 +414,13 @@ a { color: inherit; text-decoration: none; }
     border-radius: 0;
     max-height: 70vh;
     overflow-y: auto;
+  }
+
+  /* Su mobile il dropdown si apre SOLO via tap (classe .open), niente hover fantasma */
+  .main-nav li:hover .nav-dropdown {
+    display: none;
+  }
+  .main-nav li.open .nav-dropdown {
+    display: block;
   }
 }
