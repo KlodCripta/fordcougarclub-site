@@ -228,6 +228,99 @@ body > .nav-dropdown {
   margin: 48px 0;
 }
 
+/* ---------- Hero (index) ---------- */
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 24px 90px;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-title);
+  font-size: clamp(40px, 7vw, 84px);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+
+.hero-country {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.hero-country::before,
+.hero-country::after {
+  content: '';
+  width: 140px;
+  height: 2px;
+  background: var(--border);
+}
+
+.hero-country span {
+  font-family: var(--font-title);
+  font-size: clamp(18px, 2.4vw, 26px);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--red);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--light);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid var(--white);
+  border-radius: 6px;
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+
+.hero-note {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.hero-contact-label {
+  font-size: 14px;
+  color: var(--light);
+  margin-bottom: 14px;
+}
+
+.hero-contact-link {
+  display: inline-block;
+  color: var(--white);
+  font-size: 15px;
+  padding: 12px 24px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 6px;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.hero-contact-link:hover {
+  background-color: rgba(255,255,255,0.08);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
 /* ---------- Description blocks (layout: immagine fissa + colonna con tick) ---------- */
 .description-block {
   margin-bottom: 0;
@@ -350,7 +443,7 @@ body > .nav-dropdown {
 }
 
 .footer-signature {
-  margin: 8px auto 16px;
+  margin: 0 auto 24px;
 }
 
 .footer-signature img {
@@ -469,6 +562,13 @@ body > .nav-dropdown {
   .description-image img { height: 240px; }
   .text-column-inner { padding: 24px 18px; }
   .footer-social { gap: 22px; }
+
+  .hero-content { padding: 44px 16px 70px; }
+  .hero-country { gap: 12px; }
+  .hero-country::before,
+  .hero-country::after { width: 60px; }
+  .hero-country span { letter-spacing: 4px; }
+  .hero-subtitle { font-size: 16px; }
 
   .main-nav {
     height: var(--nav-height-mobile);
