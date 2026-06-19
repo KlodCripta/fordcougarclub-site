@@ -549,8 +549,8 @@ body > .nav-dropdown {
 }
 
 .spec-photo.spec-photo-small {
-  flex: 0 0 260px;
-  max-width: 260px;
+  flex: 0 0 180px;
+  max-width: 180px;
 }
 
 .spec-section {
@@ -775,7 +775,7 @@ body > .nav-dropdown {
     order: -1;
   }
   .spec-photo.spec-photo-small {
-    max-width: 260px;
+    max-width: 180px;
   }
 }
 
