@@ -460,6 +460,63 @@ body > .nav-dropdown {
   border-radius: 50%;
 }
 
+/* ---------- Scheda Tecnica (e pagine simili con intro + immagine + griglia pulsanti) ---------- */
+.intro-text {
+  max-width: 880px;
+  margin: 0 auto 48px;
+}
+
+.intro-text p {
+  color: var(--light);
+  font-size: 15.5px;
+  line-height: 1.75;
+  text-align: justify;
+  margin-bottom: 14px;
+}
+
+.tech-diagram {
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.tech-diagram img {
+  width: 100%;
+  display: block;
+}
+
+.model-grid {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.model-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.4;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.model-card:hover {
+  border-color: var(--red);
+  background: #1f1f1f;
+  transform: translateY(-3px);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: #060606;
@@ -603,6 +660,7 @@ body > .nav-dropdown {
   .description-image img {
     height: 180px;
   }
+  .model-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
@@ -626,6 +684,8 @@ body > .nav-dropdown {
   .hero-country::after { width: 60px; }
   .hero-country span { letter-spacing: 4px; }
   .hero-subtitle { font-size: 16px; }
+
+  .model-grid { grid-template-columns: repeat(2, 1fr); }
 
   .main-nav {
     height: var(--nav-height-mobile);
