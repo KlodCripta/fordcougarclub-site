@@ -84,10 +84,7 @@ a { color: inherit; text-decoration: none; }
   background: rgba(0,0,0,0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-bottom: 0.5px solid var(--red);
   padding: 0 16px;
 }
 
@@ -217,15 +214,15 @@ body > .nav-dropdown {
 
 .title-divider {
   border: none;
-  height: 3px;
-  background: var(--border);
+  height: 0.5px;
+  background: var(--red);
   margin: 24px 0 48px;
 }
 
 .section-divider {
   border: none;
-  height: 1px;
-  background: var(--border);
+  height: 0.5px;
+  background: var(--red);
   margin: 48px 0;
 }
 
@@ -353,7 +350,7 @@ body > .nav-dropdown {
   clear: both;
 }
 
-/* Colonna centrale con linee rosse e tick agli angoli (variante 3) */
+/* Colonna centrale (decorazioni verticali rimosse) */
 .text-column-wrap {
   max-width: 1020px;
   margin: 0 auto;
@@ -363,31 +360,6 @@ body > .nav-dropdown {
   position: relative;
   padding: 36px 44px;
 }
-
-.text-column-inner::before,
-.text-column-inner::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 0.5px;
-  background: var(--red);
-}
-
-.text-column-inner::before { left: 0; }
-.text-column-inner::after { right: 0; }
-
-.text-tick {
-  position: absolute;
-  width: 16px;
-  height: 0.5px;
-  background: var(--red);
-}
-
-.text-tick.tl { top: 0; left: 0; }
-.text-tick.bl { bottom: 0; left: 0; }
-.text-tick.tr { top: 0; right: 0; }
-.text-tick.br { bottom: 0; right: 0; }
 
 .description-text h2 {
   font-family: var(--font-title);
@@ -427,10 +399,7 @@ body > .nav-dropdown {
 /* ---------- Footer ---------- */
 .site-footer {
   background: #060606;
-  border-top: 1px solid var(--border);
-  padding: 40px 24px 32px;
-  text-align: center;
-}
+  border-top: 0.5px solid var(--red);
 
 .footer-disclaimer {
   max-width: 640px;
@@ -525,9 +494,7 @@ body > .nav-dropdown {
 .footer-legal {
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 1px solid var(--border);
-  font-size: 12px;
-}
+  border-top: 0.5px solid var(--red);
 
 .footer-legal a {
   color: var(--gray);
