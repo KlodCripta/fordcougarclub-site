@@ -150,7 +150,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .main-nav li:hover .nav-dropdown,
-.main-nav li.open .nav-dropdown {
+.main-nav li.open .nav-dropdown,
+body > .nav-dropdown {
   display: block;
 }
 
@@ -225,9 +226,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .description-image {
-  width: 380px;
-  max-width: 100%;
-  margin: 0 auto 36px;
+  float: left;
+  width: 320px;
+  margin: 0 28px 16px 0;
   padding: 8px;
   background: var(--white);
   border-radius: var(--radius);
@@ -235,10 +236,14 @@ a { color: inherit; text-decoration: none; }
 
 .description-image img {
   width: 100%;
-  height: 260px;
+  height: 220px;
   object-fit: cover;
   border-radius: 2px;
   display: block;
+}
+
+.description-clearfix {
+  clear: both;
 }
 
 /* Colonna centrale con linee rosse e tick agli angoli (variante 3) */
@@ -379,12 +384,25 @@ a { color: inherit; text-decoration: none; }
   .text-column-inner {
     padding: 28px 28px;
   }
+  .description-image {
+    width: 260px;
+    margin: 0 22px 14px 0;
+  }
+  .description-image img {
+    height: 180px;
+  }
 }
 
 @media (max-width: 640px) {
   body { padding-top: var(--nav-height-mobile); }
   .page-content { padding: 40px 16px 60px; }
-  .description-image { width: 100%; max-width: 380px; padding: 6px; }
+  .description-image {
+    float: none;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 24px;
+    padding: 6px;
+  }
   .description-image img { height: 240px; }
   .text-column-inner { padding: 24px 18px; }
   .footer-links { gap: 20px; flex-wrap: wrap; }
@@ -392,12 +410,14 @@ a { color: inherit; text-decoration: none; }
   .main-nav {
     height: var(--nav-height-mobile);
     padding: 0 4px;
-    overflow-x: auto;
+    overflow: visible;
     justify-content: flex-start;
   }
   .main-nav ul {
     flex-wrap: nowrap;
     height: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .main-nav li { height: 100%; }
   .main-nav > ul > li > a,
@@ -420,7 +440,8 @@ a { color: inherit; text-decoration: none; }
   .main-nav li:hover .nav-dropdown {
     display: none;
   }
-  .main-nav li.open .nav-dropdown {
+  .main-nav li.open .nav-dropdown,
+  body > .nav-dropdown {
     display: block;
   }
 }
