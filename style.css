@@ -532,8 +532,8 @@ body > .nav-dropdown {
 }
 
 .spec-photo {
-  flex: 1;
-  max-width: 380px;
+  flex: 0 0 260px;
+  max-width: 260px;
   border: 2px solid rgba(255,255,255,0.85);
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(255,255,255,0.15);
@@ -753,8 +753,9 @@ body > .nav-dropdown {
   }
   .spec-photo {
     position: static;
+    flex: none;
     width: 100%;
-    max-width: 380px;
+    max-width: 260px;
     margin: 0 auto 8px;
     order: -1;
   }
