@@ -370,7 +370,7 @@ body > .nav-dropdown {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 1px;
+  width: 0.5px;
   background: var(--red);
 }
 
@@ -380,7 +380,7 @@ body > .nav-dropdown {
 .text-tick {
   position: absolute;
   width: 16px;
-  height: 1px;
+  height: 0.5px;
   background: var(--red);
 }
 
