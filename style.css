@@ -57,7 +57,16 @@ a { color: inherit; text-decoration: none; }
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid var(--border);
+  padding: 8px;
+  background: var(--white);
+  border-radius: var(--radius);
+  display: block;
+}
+
+.banner-img img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
 }
 
 .banner-caption {
@@ -337,6 +346,24 @@ body > .nav-dropdown {
   text-align: center;
 }
 
+.footer-disclaimer {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-disclaimer p {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.footer-disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
 .footer-links {
   display: flex;
   justify-content: center;
@@ -365,6 +392,27 @@ body > .nav-dropdown {
 
 .footer-text strong {
   color: var(--light);
+}
+
+.footer-legal {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.footer-legal a {
+  color: var(--gray);
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: var(--red);
+}
+
+.footer-legal-sep {
+  color: var(--border);
+  margin: 0 10px;
 }
 
 /* ---------- Scroll reveal (riutilizzabile in tutto il sito) ---------- */
