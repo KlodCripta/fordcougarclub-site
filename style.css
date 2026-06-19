@@ -532,8 +532,8 @@ body > .nav-dropdown {
 }
 
 .spec-photo {
-  flex: 0 0 260px;
-  max-width: 260px;
+  flex: 0 0 380px;
+  max-width: 380px;
   border: 2px solid rgba(255,255,255,0.85);
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(255,255,255,0.15);
@@ -546,6 +546,11 @@ body > .nav-dropdown {
 .spec-photo img {
   width: 100%;
   display: block;
+}
+
+.spec-photo.spec-photo-small {
+  flex: 0 0 260px;
+  max-width: 260px;
 }
 
 .spec-section {
@@ -765,9 +770,12 @@ body > .nav-dropdown {
     position: static;
     flex: none;
     width: 100%;
-    max-width: 260px;
+    max-width: 380px;
     margin: 0 auto 8px;
     order: -1;
+  }
+  .spec-photo.spec-photo-small {
+    max-width: 260px;
   }
 }
 
