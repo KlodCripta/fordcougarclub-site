@@ -661,6 +661,37 @@ body > .nav-dropdown {
   max-width: 420px;
 }
 
+/* ---------- Embed video responsive (es. YouTube) ---------- */
+.video-embed-wrap {
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  overflow: hidden;
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.video-embed-wrap .inline-photo-caption {
+  margin: 12px auto 0;
+  max-width: 640px;
+}
+
 /* ---------- Scheda Tecnica (e pagine simili con intro + immagine + griglia pulsanti) ---------- */
 .intro-text {
   max-width: 880px;
