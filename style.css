@@ -661,35 +661,46 @@ body > .nav-dropdown {
   max-width: 420px;
 }
 
-/* ---------- Embed video responsive (es. YouTube) ---------- */
-.video-embed-wrap {
-  max-width: 640px;
+/* ---------- Link video esterno (no embed: testo + pulsante verso YouTube) ---------- */
+.video-link-wrap {
+  max-width: 560px;
   margin: 0 auto 48px;
+  text-align: center;
 }
 
-.video-embed {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  border: 2px solid rgba(255,255,255,0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  overflow: hidden;
+.video-link-highlight {
+  color: var(--red);
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  margin-bottom: 24px;
 }
 
-.video-embed iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
+.video-link-button-wrap {
+  margin-top: 8px;
 }
 
-.video-embed-wrap .inline-photo-caption {
-  margin: 12px auto 0;
-  max-width: 640px;
+.video-link-button {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--red);
+  padding: 14px 36px;
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.video-link-button:hover {
+  background-color: var(--red-dark);
+  border-color: var(--red-dark);
+  transform: translateY(-2px);
 }
 
 /* ---------- Scheda Tecnica (e pagine simili con intro + immagine + griglia pulsanti) ---------- */
@@ -864,6 +875,10 @@ body > .nav-dropdown {
 
 .inline-subtitle.spaced-top {
   margin-top: 24px;
+}
+
+.inline-subtitle.inline-subtitle-center {
+  text-align: center;
 }
 
 /* ---------- Pagina FAQ / Guida (es. GPL) ---------- */
