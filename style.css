@@ -635,6 +635,16 @@ body > .nav-dropdown {
   overflow: hidden;
 }
 
+.inline-photo.inline-photo-clickable {
+  display: block;
+  cursor: zoom-in;
+  transition: box-shadow 0.2s;
+}
+
+.inline-photo.inline-photo-clickable:hover {
+  box-shadow: 0 0 18px rgba(255,255,255,0.3);
+}
+
 .inline-photo img {
   width: 100%;
   display: block;
