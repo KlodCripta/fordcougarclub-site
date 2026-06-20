@@ -720,6 +720,14 @@ body > .nav-dropdown {
   margin: 0 auto 48px;
 }
 
+.intro-text.intro-text-center {
+  text-align: center;
+}
+
+.intro-text.intro-text-center p {
+  text-align: center;
+}
+
 .intro-text p {
   color: var(--light);
   font-size: 15.5px;
@@ -890,6 +898,15 @@ body > .nav-dropdown {
 
 .inline-subtitle.inline-subtitle-center {
   text-align: center;
+}
+
+.tire-size {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
 }
 
 /* ---------- Pagina FAQ / Guida (es. GPL) ---------- */
