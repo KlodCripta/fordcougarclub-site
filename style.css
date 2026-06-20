@@ -346,6 +346,10 @@ body > .nav-dropdown {
   display: block;
 }
 
+.description-image.description-image-tall img {
+  height: 320px;
+}
+
 .description-clearfix {
   clear: both;
 }
@@ -788,6 +792,9 @@ body > .nav-dropdown {
   .description-image img {
     height: 180px;
   }
+  .description-image.description-image-tall img {
+    height: 260px;
+  }
   .model-grid { grid-template-columns: repeat(2, 1fr); }
   .spec-layout {
     flex-direction: column;
@@ -815,6 +822,7 @@ body > .nav-dropdown {
     margin: 0 auto 24px;
   }
   .description-image img { height: 240px; }
+  .description-image.description-image-tall img { height: 340px; }
   .text-column-inner { padding: 24px 18px; }
   .footer-social { gap: 22px; }
   .footer-signature { flex-direction: column; gap: 10px; }
