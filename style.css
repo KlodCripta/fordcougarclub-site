@@ -475,7 +475,7 @@ body > .nav-dropdown {
   border-radius: 50%;
 }
 
-/* Liste senza bullet dentro intro-text: testo semplice, una voce per riga */
+/* Liste con trattino rosso dentro intro-text */
 .intro-text ul.legal-content-ul {
   margin: 0 0 14px;
   padding-left: 0;
@@ -486,7 +486,17 @@ body > .nav-dropdown {
   color: var(--light);
   font-size: 15.5px;
   line-height: 1.75;
+  padding-left: 22px;
+  position: relative;
   margin-bottom: 6px;
+}
+
+.intro-text ul.legal-content-ul li::before {
+  content: '\2013';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 700;
 }
 
 /* Piccolo sottotitolo descrittivo sotto un H2 (kicker) */
@@ -531,10 +541,10 @@ body > .nav-dropdown {
 
 .catalog-slider-track img {
   width: 25%;
-  height: 280px;
+  height: 380px;
   flex-shrink: 0;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   cursor: zoom-in;
   user-select: none;
   -webkit-user-drag: none;
@@ -1118,7 +1128,7 @@ body > .nav-dropdown {
   .faq-main-image img { height: 200px; }
   .inline-photo { max-width: 100%; }
   .catalog-slider { max-width: 100%; }
-  .catalog-slider-track img { height: 200px; }
+  .catalog-slider-track img { height: 280px; }
   .lightbox-close { top: 12px; right: 16px; font-size: 28px; }
   .lightbox-nav { font-size: 32px; padding: 6px 10px; }
   .faq-item summary { font-size: 14.5px; padding: 16px 32px 16px 0; }
