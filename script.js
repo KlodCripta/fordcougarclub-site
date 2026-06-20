@@ -76,4 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
       closeDropdown(li);
     });
   });
+
+  // Deterrente base anti-copia: disabilita click destro e drag su tutte le immagini.
+  // NB: non è una protezione reale (resta possibile con DevTools, screenshot, ecc.),
+  // serve solo a scoraggiare il salvataggio occasionale da parte dell'utente medio.
+  document.querySelectorAll('img').forEach(function (img) {
+    img.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    img.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  });
 });
