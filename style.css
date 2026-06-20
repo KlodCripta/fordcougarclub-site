@@ -475,6 +475,181 @@ body > .nav-dropdown {
   border-radius: 50%;
 }
 
+/* Liste con bullet dentro intro-text (riusa lo stesso stile delle pagine legali) */
+.intro-text ul.legal-content-ul {
+  margin: 0 0 14px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.intro-text ul.legal-content-ul li {
+  color: var(--light);
+  font-size: 15.5px;
+  line-height: 1.75;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.intro-text ul.legal-content-ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+/* Piccolo sottotitolo descrittivo sotto un H2 (kicker) */
+.section-kicker {
+  font-family: var(--font-title);
+  font-size: 14px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+/* Citazione fonte storica in fondo pagina */
+.source-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray);
+  font-style: italic;
+  margin-top: 32px;
+}
+
+/* ---------- Slider catalogo storico (autoplay + lightbox) ---------- */
+.catalog-slider {
+  max-width: 760px;
+  margin: 0 auto 12px;
+  position: relative;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  overflow: hidden;
+  background: #111;
+}
+
+.catalog-slider-track {
+  display: flex;
+  width: 400%;
+  animation: catalogSlide 16s infinite;
+}
+
+.catalog-slider-track img {
+  width: 25%;
+  flex-shrink: 0;
+  display: block;
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes catalogSlide {
+  0%, 21%   { transform: translateX(0%); }
+  25%, 46%  { transform: translateX(-25%); }
+  50%, 71%  { transform: translateX(-50%); }
+  75%, 96%  { transform: translateX(-75%); }
+  100%      { transform: translateX(0%); }
+}
+
+.catalog-slider-caption {
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray);
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+/* Lightbox (CSS-only, via :target) */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox-overlay:target {
+  display: flex;
+}
+
+.lightbox-overlay img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 4px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  color: var(--white);
+  font-size: 36px;
+  line-height: 1;
+  text-decoration: none;
+  font-family: var(--font-title);
+}
+
+.lightbox-close:hover {
+  color: var(--red);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  font-size: 48px;
+  line-height: 1;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-family: var(--font-title);
+  transition: color 0.2s;
+}
+
+.lightbox-nav:hover {
+  color: var(--red);
+}
+
+.lightbox-nav-prev { left: 8px; }
+.lightbox-nav-next { right: 8px; }
+
+/* ---------- Immagini inline dentro testo narrativo (foto piccole, no float) ---------- */
+.inline-photo {
+  max-width: 420px;
+  margin: 24px auto;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.15);
+  overflow: hidden;
+}
+
+.inline-photo img {
+  width: 100%;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.inline-photo-caption {
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray);
+  font-style: italic;
+  margin: -16px auto 24px;
+  max-width: 420px;
+}
+
 /* ---------- Scheda Tecnica (e pagine simili con intro + immagine + griglia pulsanti) ---------- */
 .intro-text {
   max-width: 880px;
@@ -950,6 +1125,9 @@ body > .nav-dropdown {
   .footer-signature-text { font-size: 14px; }
 
   .faq-main-image img { height: 200px; }
+  .inline-photo { max-width: 100%; }
+  .lightbox-close { top: 12px; right: 16px; font-size: 28px; }
+  .lightbox-nav { font-size: 32px; padding: 6px 10px; }
   .faq-item summary { font-size: 14.5px; padding: 16px 32px 16px 0; }
   .faq-answer { font-size: 14px; }
   .faq-note { padding: 18px 18px; }
