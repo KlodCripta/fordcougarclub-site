@@ -1,1291 +1,196 @@
-/* ============================================================
-   FORD COUGAR CLUB ITALIA — Stylesheet
-   Palette: #0a0a0a (bg), #E30613 (rosso), #ffffff (testo)
-   Font Oswald caricato via <link> in ogni pagina HTML (head)
-   ============================================================ */
-
-/* ---------- Reset & Base ---------- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --red:      #E30613;
-  --red-dark: #b50010;
-  --black:    #000000;
-  --dark:     #111111;
-  --card:     #181818;
-  --border:   #2a2a2a;
-  --white:    #ffffff;
-  --gray:     #999999;
-  --light:    #cccccc;
-  --font-title: 'Oswald', sans-serif;
-  --font-body: 'Trebuchet MS', 'Segoe UI', sans-serif;
-  --radius:   4px;
-  --shadow:   0 4px 24px rgba(0,0,0,0.5);
-  --nav-height: 60px;
-  --nav-height-mobile: 52px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  padding-top: var(--nav-height);
-}
-
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-
-/* ---------- Utility ---------- */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ---------- Banner storico ---------- */
-.banner-wrap {
-  text-align: center;
-  padding: 32px 24px 16px;
-}
-
-.banner-img {
-  max-width: 700px;
-  width: 100%;
-  margin: 0 auto;
-  border: 2px solid rgba(255,255,255,0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  overflow: hidden;
-}
-
-.banner-img img {
-  width: 100%;
-  display: block;
-}
-
-.banner-caption {
-  font-size: 12px;
-  font-style: italic;
-  color: var(--gray);
-  margin-top: 10px;
-}
-
-/* ---------- Navbar (fixed, dropdown raggruppati) ---------- */
-.main-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  height: var(--nav-height);
-  background: rgba(0,0,0,0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(227,6,19,0.5);
-  padding: 0 16px;
-}
-
-.main-nav ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 4px;
-  height: 100%;
-}
-
-.main-nav li {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.main-nav > ul > li > a,
-.main-nav .nav-group-label {
-  color: var(--light);
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 10px 16px;
-  cursor: pointer;
-  transition: color 0.2s, background 0.2s;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-}
-
-.main-nav > ul > li > a.active,
-.main-nav li:hover > .nav-group-label,
-.main-nav li.open > .nav-group-label,
-.main-nav li:hover > a {
-  color: var(--white);
-  background: var(--card);
-}
-
-.nav-group-label svg {
-  width: 10px;
-  transition: transform 0.2s;
-}
-
-.main-nav li:hover .nav-group-label svg,
-.main-nav li.open .nav-group-label svg {
-  transform: rotate(180deg);
-}
-
-.nav-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 220px;
-  background: var(--dark);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  z-index: 1001;
-  box-shadow: var(--shadow);
-}
-
-.main-nav li:hover .nav-dropdown,
-.main-nav li.open .nav-dropdown,
-body > .nav-dropdown {
-  display: block;
-}
-
-.nav-dropdown a {
-  display: block;
-  padding: 13px 18px;
-  font-family: var(--font-title);
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: var(--light);
-  text-decoration: none;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s, color 0.2s;
-}
-
-.nav-dropdown a:last-child { border-bottom: none; }
-
-.nav-dropdown a:hover {
-  background: var(--card);
-  color: var(--red);
-}
-
-.nav-dropdown a.active {
-  color: var(--red);
-  font-weight: 600;
-}
-
-/* ---------- Page content ---------- */
-.page-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 56px 24px 80px;
-}
-
-.page-content.page-content-no-top {
-  padding-top: 0;
-}
-
-.page-title {
-  font-family: var(--font-title);
-  font-size: clamp(34px, 5vw, 52px);
-  font-weight: 700;
-  color: var(--red);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.15;
-  text-align: center;
-}
-
-.page-title .subtitle {
-  display: block;
-  font-size: clamp(20px, 2.6vw, 26px);
-  color: var(--white);
-  font-weight: 400;
-  letter-spacing: 3px;
-  margin-top: 6px;
-}
-
-.title-divider {
-  border: none;
-  height: 1px;
-  background: rgba(227,6,19,0.5);
-  margin: 24px 0 48px;
-}
-
-.section-divider {
-  border: none;
-  height: 1px;
-  background: rgba(227,6,19,0.5);
-  margin: 48px 0;
-}
-
-/* ---------- Hero (index) ---------- */
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 4px 24px 90px;
-  text-align: center;
-}
-
-.hero-title {
-  font-family: var(--font-title);
-  font-size: clamp(40px, 7vw, 84px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 18px;
-}
-
-.hero-country {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.hero-country::before,
-.hero-country::after {
-  content: '';
-  width: 140px;
-  height: 3px;
-  background: linear-gradient(to right, #009246 0%, #009246 33%, #ffffff 33%, #ffffff 66%, #ce2b37 66%, #ce2b37 100%);
-}
-
-.hero-country span {
-  font-family: var(--font-title);
-  font-size: clamp(18px, 2.4vw, 26px);
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: var(--white);
-}
-
-.hero-subtitle {
-  font-size: 18px;
-  color: var(--light);
-  line-height: 1.7;
-  margin-bottom: 36px;
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: 14px 32px;
-  border: 2px solid var(--white);
-  border-radius: 6px;
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 36px;
-}
-
-.hero-note {
-  font-size: 15px;
-  color: var(--gray);
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto 40px;
-}
-
-.hero-contact-label {
-  font-size: 14px;
-  color: var(--light);
-  margin-bottom: 14px;
-}
-
-.hero-contact-link {
-  display: inline-block;
-  color: var(--white);
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 13px 32px;
-  border: 1px solid rgba(255,255,255,0.4);
-  border-radius: 6px;
-  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
-}
-
-.hero-contact-link:hover {
-  background-color: rgba(255,255,255,0.08);
-  border-color: var(--white);
-  transform: translateY(-2px);
-}
-
-/* ---------- Description blocks (layout: immagine fissa + colonna con tick) ---------- */
-.description-block {
-  margin-bottom: 0;
-}
-
-.description-image {
-  float: left;
-  width: 320px;
-  margin: 0 28px 16px 0;
-  border: 2px solid rgba(255,255,255,0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  overflow: hidden;
-}
-
-.description-image img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.description-image.description-image-tall img {
-  height: 320px;
-}
-
-.description-clearfix {
-  clear: both;
-}
-
-/* Colonna centrale (decorazioni verticali rimosse) */
-.text-column-wrap {
-  max-width: 1020px;
-  margin: 0 auto;
-}
-
-.text-column-inner {
-  position: relative;
-  padding: 36px 44px;
-}
-
-.description-text h2 {
-  font-family: var(--font-title);
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 18px;
-  padding-left: 14px;
-  position: relative;
-  display: inline-block;
-}
-
-.description-text h2::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 2px;
-  bottom: 2px;
-  width: 4px;
-  background: var(--red);
-}
-
-.description-text p,
-.description-text-full p {
-  color: var(--light);
-  font-size: 15px;
-  line-height: 1.6;
-  text-align: justify;
-  margin-bottom: 13px;
-}
-
-.description-text-full {
-  margin-top: 6px;
-}
-
-.description-text-full a {
-  color: var(--red);
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-
-.description-text-full a:hover {
-  color: var(--white);
-}
-
-/* Link generico dentro testo narrativo (riusabile in tutte le pagine) */
-.text-link {
-  color: var(--red);
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-
-.text-link:hover {
-  color: var(--white);
-}
-
-/* ---------- Pagine legali (Privacy, Cookie, Note Legali) ---------- */
-.legal-content {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.legal-updated {
-  font-size: 13px;
-  color: var(--gray);
-  margin-bottom: 36px;
-  text-align: center;
-}
-
-.legal-content h2 {
-  font-family: var(--font-title);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 40px;
-  margin-bottom: 16px;
-  border-left: 4px solid var(--red);
-  padding-left: 14px;
-}
-
-.legal-content h2:first-of-type {
-  margin-top: 0;
-}
-
-.legal-content p {
-  color: var(--light);
-  font-size: 15px;
-  line-height: 1.7;
-  text-align: justify;
-  margin-bottom: 14px;
-}
-
-.legal-content ul {
-  margin: 0 0 14px;
-  padding-left: 0;
-  list-style: none;
-}
-
-.legal-content ul li {
-  color: var(--light);
-  font-size: 15px;
-  line-height: 1.7;
-  padding-left: 20px;
-  position: relative;
-  margin-bottom: 8px;
-}
-
-.legal-content ul li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 6px;
-  height: 6px;
-  background: var(--red);
-  border-radius: 50%;
-}
-
-/* Liste con trattino rosso dentro intro-text */
-.intro-text ul.legal-content-ul {
-  margin: 0 0 14px;
-  padding-left: 0;
-  list-style: none;
-}
-
-.intro-text ul.legal-content-ul li {
-  color: var(--light);
-  font-size: 15.5px;
-  line-height: 1.75;
-  padding-left: 22px;
-  position: relative;
-  margin-bottom: 6px;
-}
-
-.intro-text ul.legal-content-ul li::before {
-  content: '\2013';
-  position: absolute;
-  left: 0;
-  color: var(--red);
-  font-weight: 700;
-}
-
-/* Piccolo sottotitolo descrittivo sotto un H2 (kicker) */
-.section-kicker {
-  font-family: var(--font-title);
-  font-size: 14px;
-  color: var(--gray);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: -8px;
-  margin-bottom: 16px;
-}
-
-/* Citazione fonte storica in fondo pagina */
-.source-note {
-  text-align: center;
-  font-size: 13px;
-  color: var(--gray);
-  font-style: italic;
-  margin-top: 32px;
-}
-
-/* ---------- Slider catalogo storico (autoplay + lightbox) ---------- */
-.catalog-slider {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  margin: 24px auto 12px;
-  position: relative;
-  border: 2px solid rgba(255,255,255,0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  overflow: hidden;
-  background: #111;
-}
-
-.catalog-slider-track {
-  display: flex;
-  width: 400%;
-  animation: catalogSlide 16s infinite;
-}
-
-.catalog-slider-track img {
-  width: 25%;
-  height: 380px;
-  flex-shrink: 0;
-  display: block;
-  object-fit: contain;
-  cursor: zoom-in;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-@keyframes catalogSlide {
-  0%, 21%   { transform: translateX(0%); }
-  25%, 46%  { transform: translateX(-25%); }
-  50%, 71%  { transform: translateX(-50%); }
-  75%, 96%  { transform: translateX(-75%); }
-  100%      { transform: translateX(0%); }
-}
-
-.catalog-slider-track.catalog-slider-track-6 {
-  width: 600%;
-  animation: catalogSlide6 24s infinite;
-}
-
-.catalog-slider-track.catalog-slider-track-6 img {
-  width: 16.666%;
-}
-
-@keyframes catalogSlide6 {
-  0%, 14.5%   { transform: translateX(0%); }
-  16.66%, 31.16% { transform: translateX(-16.666%); }
-  33.33%, 47.83% { transform: translateX(-33.333%); }
-  50%, 64.5%  { transform: translateX(-50%); }
-  66.66%, 81.16% { transform: translateX(-66.666%); }
-  83.33%, 97.83% { transform: translateX(-83.333%); }
-  100%        { transform: translateX(0%); }
-}
-
-.catalog-slider-caption {
-  text-align: center;
-  font-size: 12px;
-  color: var(--gray);
-  font-style: italic;
-  margin-bottom: 40px;
-}
-
-/* Lightbox (CSS-only, via :target) */
-.lightbox-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.lightbox-overlay:target {
-  display: flex;
-}
-
-.lightbox-overlay img {
-  max-width: 100%;
-  max-height: 90vh;
-  border-radius: 4px;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  color: var(--white);
-  font-size: 36px;
-  line-height: 1;
-  text-decoration: none;
-  font-family: var(--font-title);
-}
-
-.lightbox-close:hover {
-  color: var(--red);
-}
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--white);
-  font-size: 48px;
-  line-height: 1;
-  text-decoration: none;
-  padding: 8px 16px;
-  font-family: var(--font-title);
-  transition: color 0.2s;
-}
-
-.lightbox-nav:hover {
-  color: var(--red);
-}
-
-.lightbox-nav-prev { left: 8px; }
-.lightbox-nav-next { right: 8px; }
-
-/* ---------- Immagini inline dentro testo narrativo (foto piccole, no float) ---------- */
-.inline-photo {
-  max-width: 420px;
-  margin: 24px auto;
-  border: 2px solid rgba(255,255,255,0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  overflow: hidden;
-}
-
-.inline-photo.inline-photo-clickable {
-  display: block;
-  cursor: zoom-in;
-  transition: box-shadow 0.2s;
-}
-
-.inline-photo.inline-photo-clickable:hover {
-  box-shadow: 0 0 18px rgba(255,255,255,0.3);
-}
-
-.inline-photo img {
-  width: 100%;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.inline-photo-caption {
-  text-align: center;
-  font-size: 12px;
-  color: var(--gray);
-  font-style: italic;
-  margin: -16px auto 24px;
-  max-width: 420px;
-}
-
-/* ---------- Link video esterno (no embed: testo + pulsante verso YouTube) ---------- */
-.video-link-wrap {
-  max-width: 560px;
-  margin: 0 auto 48px;
-  text-align: center;
-}
-
-.video-link-highlight {
-  color: var(--red);
-  font-family: var(--font-title);
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: 0.3px;
-  margin-bottom: 24px;
-}
-
-.video-link-button-wrap {
-  margin-top: 8px;
-}
-
-.video-link-button {
-  display: inline-block;
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--white);
-  background: var(--red);
-  padding: 14px 36px;
-  border: 1px solid var(--red);
-  border-radius: 6px;
-  transition: background-color 0.2s, transform 0.2s;
-}
-
-.video-link-button:hover {
-  background-color: var(--red-dark);
-  border-color: var(--red-dark);
-  transform: translateY(-2px);
-}
-
-/* ---------- Scheda Tecnica (e pagine simili con intro + immagine + griglia pulsanti) ---------- */
-.intro-text {
-  max-width: 880px;
-  margin: 0 auto 48px;
-}
-
-.intro-text.intro-text-center {
-  text-align: center;
-}
-
-.intro-text.intro-text-center p {
-  text-align: center;
-}
-
-.intro-text p {
-  color: var(--light);
-  font-size: 15.5px;
-  line-height: 1.75;
-  text-align: justify;
-  margin-bottom: 14px;
-}
-
-.tech-diagram {
-  max-width: 760px;
-  margin: 0 auto 48px;
-}
-
-.tech-diagram img {
-  width: 100%;
-  display: block;
-}
-
-.model-grid {
-  max-width: 1020px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.model-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px 16px;
-  font-family: var(--font-title);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.4;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
-}
-
-.model-card:hover {
-  border-color: var(--red);
-  background: #1f1f1f;
-  transform: translateY(-3px);
-}
-
-/* ---------- Scheda tecnica modello (tabelle dati + foto) ---------- */
-.spec-layout {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  max-width: 1100px;
-  margin: 0 auto 40px;
-}
-
-.spec-tables {
-  flex: 1.3;
-  min-width: 0;
-}
-
-.spec-photo {
-  flex: 0 0 380px;
-  max-width: 380px;
-  border: 2px solid rgba(255,255,255,0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  overflow: hidden;
-  align-self: flex-start;
-  position: sticky;
-  top: 80px;
-}
-
-.spec-photo img {
-  width: 100%;
-  display: block;
-}
-
-.spec-photo.spec-photo-small {
-  flex: 0 0 260px;
-  max-width: 260px;
-}
-
-.spec-section {
-  margin-bottom: 32px;
-}
-
-.spec-section h2 {
-  font-family: var(--font-title);
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  border-left: 4px solid var(--red);
-  padding-left: 12px;
-}
-
-.spec-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14.5px;
-}
-
-.spec-table tr {
-  border-bottom: 1px solid var(--border);
-}
-
-.spec-table tr:last-child {
-  border-bottom: none;
-}
-
-.spec-table td {
-  padding: 9px 4px;
-  vertical-align: top;
-}
-
-.spec-table td.spec-label {
-  color: var(--light);
-  font-weight: 600;
-  width: 45%;
-  padding-right: 12px;
-}
-
-.spec-table td.spec-value {
-  color: var(--gray);
-}
-
-.spec-table td.spec-value strong {
-  color: var(--white);
-  font-weight: 600;
-}
-
-.spec-highlight-red {
-  color: var(--red) !important;
-  font-weight: 700;
-}
-
-.spec-highlight-green {
-  color: #3fb950 !important;
-  font-weight: 600;
-}
-
-.spec-full-row {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Sotto-titolo rosso semplice per testi narrativi (es. pagina Motore) */
-.inline-subtitle {
-  font-family: var(--font-title);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--red);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-}
-
-.inline-subtitle.spaced-top {
-  margin-top: 24px;
-}
-
-.inline-subtitle.inline-subtitle-center {
-  text-align: center;
-}
-
-.tire-size {
-  font-family: var(--font-title);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 1px;
-  margin-bottom: 14px;
-}
-
-/* ---------- Pagina FAQ / Guida (es. GPL) ---------- */
-.faq-logo {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 28px;
-}
-
-.faq-logo img {
-  height: 110px;
-  width: auto;
-}
-
-.faq-hero {
-  max-width: 760px;
-  margin: 0 auto 40px;
-  text-align: center;
-}
-
-.faq-hero-subtitle {
-  font-family: var(--font-title);
-  font-size: 16px;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
-}
-
-.faq-hero p {
-  color: var(--light);
-  font-size: 15.5px;
-  line-height: 1.75;
-}
-
-.faq-main-image {
-  max-width: 420px;
-  margin: 0 auto 48px;
-  border: 2px solid rgba(255,255,255,0.85);
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.15);
-  overflow: hidden;
-}
-
-.faq-main-image img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
-}
-
-.faq-list {
-  max-width: 780px;
-  margin: 0 auto 48px;
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--border);
-}
-
-.faq-item summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 20px 36px 20px 4px;
-  position: relative;
-  font-family: var(--font-title);
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  color: var(--white);
-  transition: color 0.2s;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: '+';
-  position: absolute;
-  right: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--red);
-  transition: transform 0.25s;
-  line-height: 1;
-}
-
-.faq-item[open] summary::after {
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.faq-item summary:hover {
-  color: var(--red);
-}
-
-.faq-answer {
-  padding: 0 4px 22px;
-  color: var(--light);
-  font-size: 15px;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.faq-note {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 24px 28px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--red);
-  border-radius: var(--radius);
-}
-
-.faq-note p {
-  color: var(--gray);
-  font-size: 13.5px;
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* ---------- Footer ---------- */
-.site-footer {
-  background: #060606;
-  border-top: 1px solid rgba(227,6,19,0.5);
-  padding: 40px 24px 32px;
-  text-align: center;
-}
-
-.footer-disclaimer {
-  max-width: 640px;
-  margin: 0 auto 28px;
-}
-
-.footer-disclaimer p {
-  font-size: 12px;
-  color: var(--gray);
-  line-height: 1.65;
-  margin-bottom: 8px;
-}
-
-.footer-disclaimer p:last-child {
-  margin-bottom: 0;
-}
-
-.footer-signature {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin: 0 auto 24px;
-}
-
-.footer-signature img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  opacity: 0.85;
-  flex-shrink: 0;
-}
-
-.footer-signature-text {
-  font-family: var(--font-title);
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  max-width: 640px;
-  margin: 0 auto 24px;
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.footer-social a {
-  color: var(--gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s, transform 0.2s;
-}
-
-.footer-social a svg {
-  width: 22px;
-  height: 22px;
-}
-
-.footer-social a:hover {
-  color: var(--red);
-  transform: translateY(-2px);
-}
-
-.footer-text {
-  font-size: 13px;
-  color: var(--gray);
-  margin-bottom: 6px;
-}
-
-.footer-text strong {
-  color: var(--light);
-}
-
-.footer-text a {
-  color: var(--light);
-  transition: color 0.2s;
-}
-
-.footer-text a:hover {
-  color: var(--red);
-}
-
-.footer-legal {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(227,6,19,0.5);
-  font-size: 12px;
-}
-
-.footer-legal a {
-  color: var(--gray);
-  transition: color 0.2s;
-}
-
-.footer-legal a:hover {
-  color: var(--red);
-}
-
-.footer-legal-sep {
-  color: var(--border);
-  margin: 0 10px;
-}
-
-/* ---------- Scroll reveal (riutilizzabile in tutto il sito) ---------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .text-column-inner {
-    padding: 28px 28px;
-  }
-  .description-image {
-    width: 260px;
-    margin: 0 22px 14px 0;
-  }
-  .description-image img {
-    height: 180px;
-  }
-  .description-image.description-image-tall img {
-    height: 260px;
-  }
-  .model-grid { grid-template-columns: repeat(2, 1fr); }
-  .spec-layout {
-    flex-direction: column;
-  }
-  .spec-photo {
-    position: static;
-    flex: none;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto 8px;
-    order: -1;
-  }
-  .spec-photo.spec-photo-small {
-    max-width: 260px;
-  }
-}
-
-@media (max-width: 640px) {
-  body { padding-top: var(--nav-height-mobile); }
-  .page-content { padding: 40px 16px 60px; }
-  .description-image {
-    float: none;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto 24px;
-  }
-  .description-image img { height: 240px; }
-  .description-image.description-image-tall img { height: 340px; }
-  .text-column-inner { padding: 24px 18px; }
-  .footer-social { gap: 22px; }
-  .footer-signature { flex-direction: column; gap: 10px; }
-  .footer-signature-text { font-size: 14px; }
-
-  .faq-main-image img { height: 200px; }
-  .inline-photo { max-width: 100%; }
-  .catalog-slider { max-width: 100%; }
-  .catalog-slider-track img { height: 280px; }
-  .lightbox-close { top: 12px; right: 16px; font-size: 28px; }
-  .lightbox-nav { font-size: 32px; padding: 6px 10px; }
-  .faq-item summary { font-size: 14.5px; padding: 16px 32px 16px 0; }
-  .faq-answer { font-size: 14px; }
-  .faq-note { padding: 18px 18px; }
-
-  .hero-content { padding: 8px 16px 70px; }
-  .hero-country { gap: 12px; }
-  .hero-country::before,
-  .hero-country::after { width: 60px; }
-  .hero-country span { letter-spacing: 4px; }
-  .hero-subtitle { font-size: 16px; }
-
-  .model-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .main-nav {
-    height: var(--nav-height-mobile);
-    padding: 0 4px;
-    overflow: visible;
-    justify-content: flex-start;
-  }
-  .main-nav ul {
-    flex-wrap: nowrap;
-    height: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .main-nav li { height: 100%; }
-  .main-nav > ul > li > a,
-  .main-nav .nav-group-label {
-    font-size: 12px;
-    padding: 8px 10px;
-  }
-  .nav-dropdown {
-    position: fixed;
-    top: var(--nav-height-mobile);
-    left: 0;
-    right: 0;
-    min-width: 0;
-    border-radius: 0;
-    max-height: 70vh;
-    overflow-y: auto;
-  }
-
-  /* Su mobile il dropdown si apre SOLO via tap (classe .open), niente hover fantasma */
-  .main-nav li:hover .nav-dropdown {
-    display: none;
-  }
-  .main-nav li.open .nav-dropdown,
-  body > .nav-dropdown {
-    display: block;
-  }
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ford Cougar Club Italia - La community italiana dedicata alla Ford Cougar. Sito in costruzione.">
+<meta name="robots" content="index, follow">
+<title>Ford Cougar Club Italia</title>
+<link rel="icon" href="images/logo/cougar_logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="banner-wrap">
+    <div class="banner-img">
+      <img src="images/logo/cougar_banner.png" alt="Ford Cougar Club Italia - Banner storico">
+    </div>
+    <p class="banner-caption">*Banner storico del primo Ford Cougar Club italiano riproposto come omaggio</p>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="descrizione.html">DESCRIZIONE</a></li>
+      <li>
+        <span class="nav-group-label">TECNICA <svg viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <div class="nav-dropdown">
+          <a href="scheda-tecnica.html">Scheda Tecnica</a>
+          <a href="motore.html">Motore</a>
+          <a href="gpl.html">GPL</a>
+          <a href="st200-svt.html">ST200 (SVT)</a>
+          <a href="gomme.html">Gomme</a>
+          <a href="elaborare.html">Elaborare</a>
+        </div>
+      </li>
+      <li>
+        <span class="nav-group-label">STORIA <svg viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <div class="nav-dropdown">
+          <a href="evoluzione.html">Evoluzione</a>
+          <a href="mercury-division.html">Mercury Division</a>
+          <a href="versioni-speciali.html">Versioni Speciali</a>
+          <a href="recensioni.html">Recensioni</a>
+        </div>
+      </li>
+      <li>
+        <span class="nav-group-label">RISORSE <svg viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <div class="nav-dropdown">
+          <a href="omologazioni.html">Omologazioni</a>
+          <a href="esenzione-bollo.html">Esenzione Bollo</a>
+          <a href="download.html">Download</a>
+          <a href="video.html">Video</a>
+          <a href="guida-acquisto.html">Guida all'Acquisto</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="hero-content">
+  <h1 class="hero-title">FORD COUGAR CLUB</h1>
+
+  <div class="hero-country">
+    <span>ITALIA</span>
+  </div>
+
+  <p class="hero-subtitle">Il sito ufficiale della community italiana dedicata alla Ford Cougar.</p>
+</main>
+
+<section class="page-content page-content-no-top">
+  <hr class="section-divider">
+
+  <section class="description-block">
+    <div class="description-image description-image-wide">
+      <img src="images/logo/cougar_rossa.jpg" alt="Ford Cougar rossa">
+    </div>
+
+    <div class="text-column-wrap">
+      <div class="text-column-inner">
+
+        <div class="description-text">
+          <h2>FORD COUGAR</h2>
+          <p>Questo sito vuole essere un punto di riferimento per tutti quegli utenti italiani appassionati, o anche solo incuriositi, dalla particolarissima Ford Cougar.</p>
+          <p>In Italia venne distribuita a partire dal secondo semestre del 1999 in un unico allestimento (2.5 V6 cambio manuale a 5 rapporti) ed abbandonò il mercato nella breve estate del 2001, con meno di 1200 esemplari venduti.</p>
+          <p>Pur non avendo riscosso il successo commerciale sperato nel nostro Paese, questo risultato ha contribuito a rendere la Cougar una vettura rara e ricercata dagli appassionati.</p>
+        </div>
+
+        <div class="description-text-full">
+          <p>Grazie alla disponibilità internazionale di ricambi e componenti, mantenere e restaurare una Cougar è oggi molto più semplice rispetto al passato. La forte presenza di appassionati in Europa e negli Stati Uniti permette ancora di reperire documentazione tecnica, accessori e numerosi componenti originali o aftermarket.</p>
+          <p>Con una base prestazionale di 170 cavalli, un baule da 410 litri espandibile fino a circa 930 litri e il sistema di sospensioni posteriori indipendenti Quadralink derivato dalla Mondeo, la Cougar rappresenta ancora oggi un'interessante combinazione tra comfort, praticità e piacere di guida.</p>
+          <p>Le sue dimensioni relativamente compatte e la particolare configurazione da coupé quattro posti la rendono adatta sia all'utilizzo quotidiano sia ai viaggi più lunghi. L'abitacolo offre spazio sufficiente per una famiglia non numerosa, mentre il vano bagagli rimane uno dei punti di forza del progetto.</p>
+          <p>Elegante nelle linee ma allo stesso tempo sportiva nell'impostazione, la Cougar conserva ancora oggi una personalità unica che la distingue dalle altre coupé della sua generazione.</p>
+          <p>Ford Cougar Club Italia nasce con l'obiettivo di raccogliere e preservare informazioni, documentazione tecnica, materiale storico e curiosità dedicate a questa vettura. Attraverso il sito e la community vogliamo contribuire a mantenere viva la memoria di una delle Ford più originali prodotte tra la fine degli anni Novanta e l'inizio degli anni Duemila.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <h2 class="inline-subtitle inline-subtitle-center">Interni</h2>
+
+  <a href="#interni-1" class="catalog-slider" aria-label="Apri immagine a dimensione originale">
+    <div class="catalog-slider-track catalog-slider-track-6">
+      <img src="images/logo/cougar_interni.jpg" alt="Interni Ford Cougar">
+      <img src="images/logo/cougar_volante.jpg" alt="Volante Ford Cougar">
+      <img src="images/logo/cougar_cruscotto.jpg" alt="Cruscotto Ford Cougar">
+      <img src="images/logo/cougar_strumentazione.jpg" alt="Strumentazione Ford Cougar">
+      <img src="images/logo/cougar_portiera.jpg" alt="Portiera Ford Cougar">
+      <img src="images/logo/cougar_tetto.jpg" alt="Tetto Ford Cougar">
+    </div>
+  </a>
+  <p class="catalog-slider-caption">Gli interni della Ford Cougar</p>
+</section>
+
+<div id="interni-1" class="lightbox-overlay">
+  <a href="#" class="lightbox-close" aria-label="Chiudi">&times;</a>
+  <img src="images/logo/cougar_interni.jpg" alt="Interni Ford Cougar">
+  <a href="#interni-2" class="lightbox-nav lightbox-nav-next" aria-label="Successiva">&rsaquo;</a>
+</div>
+<div id="interni-2" class="lightbox-overlay">
+  <a href="#" class="lightbox-close" aria-label="Chiudi">&times;</a>
+  <a href="#interni-1" class="lightbox-nav lightbox-nav-prev" aria-label="Precedente">&lsaquo;</a>
+  <img src="images/logo/cougar_volante.jpg" alt="Volante Ford Cougar">
+  <a href="#interni-3" class="lightbox-nav lightbox-nav-next" aria-label="Successiva">&rsaquo;</a>
+</div>
+<div id="interni-3" class="lightbox-overlay">
+  <a href="#" class="lightbox-close" aria-label="Chiudi">&times;</a>
+  <a href="#interni-2" class="lightbox-nav lightbox-nav-prev" aria-label="Precedente">&lsaquo;</a>
+  <img src="images/logo/cougar_cruscotto.jpg" alt="Cruscotto Ford Cougar">
+  <a href="#interni-4" class="lightbox-nav lightbox-nav-next" aria-label="Successiva">&rsaquo;</a>
+</div>
+<div id="interni-4" class="lightbox-overlay">
+  <a href="#" class="lightbox-close" aria-label="Chiudi">&times;</a>
+  <a href="#interni-3" class="lightbox-nav lightbox-nav-prev" aria-label="Precedente">&lsaquo;</a>
+  <img src="images/logo/cougar_strumentazione.jpg" alt="Strumentazione Ford Cougar">
+  <a href="#interni-5" class="lightbox-nav lightbox-nav-next" aria-label="Successiva">&rsaquo;</a>
+</div>
+<div id="interni-5" class="lightbox-overlay">
+  <a href="#" class="lightbox-close" aria-label="Chiudi">&times;</a>
+  <a href="#interni-4" class="lightbox-nav lightbox-nav-prev" aria-label="Precedente">&lsaquo;</a>
+  <img src="images/logo/cougar_portiera.jpg" alt="Portiera Ford Cougar">
+  <a href="#interni-6" class="lightbox-nav lightbox-nav-next" aria-label="Successiva">&rsaquo;</a>
+</div>
+<div id="interni-6" class="lightbox-overlay">
+  <a href="#" class="lightbox-close" aria-label="Chiudi">&times;</a>
+  <a href="#interni-5" class="lightbox-nav lightbox-nav-prev" aria-label="Precedente">&lsaquo;</a>
+  <img src="images/logo/cougar_tetto.jpg" alt="Tetto Ford Cougar">
+</div>
+
+<footer class="site-footer">
+  <div class="footer-signature">
+    <img src="images/logo/cougar_logo.png" alt="Ford Cougar Club Italia">
+    <span class="footer-signature-text">Ford Cougar Club - Italia</span>
+  </div>
+
+  <div class="footer-disclaimer">
+    <p>Ford Cougar Club Italia è un sito amatoriale e indipendente dedicato alla Ford Cougar.</p>
+    <p>Non è affiliato né approvato da Ford Motor Company.</p>
+    <p>Marchi, loghi e contenuti appartengono ai rispettivi proprietari.</p>
+  </div>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/groups/FordCougarITA/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+    </a>
+    <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.46.66.25 1.22.6 1.77 1.15.5.5.84 1.03 1.13 1.7.24.62.4 1.36.45 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.46 2.43-.25.66-.6 1.22-1.13 1.77-.5.5-1.03.84-1.7 1.13-.62.24-1.36.4-2.43.45-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.46-.66-.25-1.22-.6-1.77-1.13-.5-.5-.84-1.03-1.13-1.7-.24-.62-.4-1.36-.45-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.46-2.43.25-.66.6-1.22 1.13-1.77.5-.5 1.03-.84 1.7-1.13.62-.24 1.36-.4 2.43-.45C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.92.04-1.5.18-1.92.33-.49.18-.83.4-1.2.76-.36.36-.58.7-.76 1.2-.15.42-.29 1-.33 1.92C3.71 9.01 3.7 9.33 3.7 12s.01 2.99.06 4.04c.04.92.18 1.5.33 1.92.18.49.4.83.76 1.2.36.36.7.58 1.2.76.42.15 1 .29 1.92.33 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.92-.04 1.5-.18 1.92-.33.49-.18.83-.4 1.2-.76.36-.36.58-.7.76-1.2.15-.42.29-1 .33-1.92.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.92-.18-1.5-.33-1.92-.18-.49-.4-.83-.76-1.2a3.07 3.07 0 0 0-1.2-.76c-.42-.15-1-.29-1.92-.33C14.99 3.71 14.67 3.7 12 3.7zm0 3.06a5.24 5.24 0 1 1 0 10.48 5.24 5.24 0 0 1 0-10.48zm0 1.8a3.44 3.44 0 1 0 0 6.88 3.44 3.44 0 0 0 0-6.88zm5.4-3.27a1.26 1.26 0 1 1 0 2.52 1.26 1.26 0 0 1 0-2.52z"/></svg>
+    </a>
+    <a href="#" target="_blank" rel="noopener" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.5L2.8 11.7c-1.1.45-1.1 1.08-.2 1.36l4.78 1.5 1.84 5.78c.22.62.39.87.8.87.32 0 .47-.15.66-.34l2.06-2 4.34 3.2c.8.45 1.37.22 1.57-.74l2.84-13.6c.3-1.16-.36-1.68-1.97-1.23zm-3.06 3.27L8.7 13.6l-.36 3.7-1.3-4.1 11.4-7.1c.5-.3.97-.14.62.2z"/></svg>
+    </a>
+    <a href="mailto:info@fordcougarclub.it" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5C2 4.67 2.67 4 3.5 4h17c.83 0 1.5.67 1.5 1.5v13c0 .83-.67 1.5-1.5 1.5h-17C2.67 20 2 19.33 2 18.5v-13zm2.2.5L12 11.5 19.8 6H4.2zM4 7.9V18h16V7.9l-7.45 5.32a1 1 0 0 1-1.1 0L4 7.9z"/></svg>
+    </a>
+  </div>
+
+  <p class="footer-text">Ford Cougar Club Italia &copy; 2026 &bull; Sviluppato da <a href="https://klodex.it" target="_blank" rel="noopener"><strong>KLODEX.IT</strong></a> su sistema Gentoo Linux</p>
+
+  <div class="footer-legal">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <span class="footer-legal-sep">|</span>
+    <a href="cookie-policy.html">Cookie Policy</a>
+    <span class="footer-legal-sep">|</span>
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
