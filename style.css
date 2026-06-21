@@ -234,7 +234,7 @@ body > .nav-dropdown {
 .hero-content {
   max-width: 900px;
   margin: 0 auto;
-  padding: 4px 24px 40px;
+  padding: 4px 24px 8px;
   text-align: center;
 }
 
@@ -278,7 +278,7 @@ body > .nav-dropdown {
   font-size: 18px;
   color: var(--light);
   line-height: 1.7;
-  margin-bottom: 36px;
+  margin-bottom: 8px;
 }
 
 .hero-badge {
@@ -584,6 +584,8 @@ body > .nav-dropdown {
 
 .catalog-slider-track.catalog-slider-track-6 img {
   width: 16.666%;
+  height: 320px;
+  object-fit: cover;
 }
 
 @keyframes catalogSlide6 {
@@ -1238,6 +1240,10 @@ body > .nav-dropdown {
     max-width: 380px;
     margin: 0 auto 24px;
   }
+  .description-image.description-image-wide {
+    width: 100%;
+    max-width: 380px;
+  }
   .description-image img { height: 240px; }
   .description-image.description-image-tall img { height: 340px; }
   .text-column-inner { padding: 24px 18px; }
@@ -1249,6 +1255,7 @@ body > .nav-dropdown {
   .inline-photo { max-width: 100%; }
   .catalog-slider { max-width: 100%; }
   .catalog-slider-track img { height: 280px; }
+  .catalog-slider-track.catalog-slider-track-6 img { height: 220px; }
   .lightbox-close { top: 12px; right: 16px; font-size: 28px; }
   .lightbox-nav { font-size: 32px; padding: 6px 10px; }
   .faq-item summary { font-size: 14.5px; padding: 16px 32px 16px 0; }
