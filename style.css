@@ -543,6 +543,18 @@ body > .nav-dropdown {
   margin-top: 32px;
 }
 
+/* Logo conclusivo a fine pagina (prima del footer) */
+.closing-logo {
+  text-align: center;
+  margin: 48px auto 0;
+}
+
+.closing-logo img {
+  max-width: 140px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
 /* ---------- Slider catalogo storico (autoplay + lightbox) ---------- */
 .catalog-slider {
   display: block;
