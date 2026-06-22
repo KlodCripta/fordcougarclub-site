@@ -680,6 +680,10 @@ body > .nav-dropdown {
   overflow: hidden;
 }
 
+.inline-photo.inline-photo-large {
+  max-width: 600px;
+}
+
 .inline-photo.inline-photo-clickable {
   display: block;
   cursor: zoom-in;
