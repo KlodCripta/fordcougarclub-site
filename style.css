@@ -354,11 +354,6 @@ body > .nav-dropdown {
   height: 320px;
 }
 
-.description-image.description-image-logo {
-  background: var(--white);
-  padding: 16px;
-}
-
 .description-image.description-image-logo img {
   height: 320px;
   object-fit: contain;
