@@ -690,6 +690,29 @@ body > .nav-dropdown {
   100%        { transform: translateX(0%); }
 }
 
+.catalog-slider-track.catalog-slider-track-8 {
+  width: 800%;
+  animation: catalogSlide8 32s infinite;
+}
+
+.catalog-slider-track.catalog-slider-track-8 img {
+  width: 12.5%;
+  height: 320px;
+  object-fit: cover;
+}
+
+@keyframes catalogSlide8 {
+  0%, 10.75%   { transform: translateX(0%); }
+  12.5%, 23.25% { transform: translateX(-12.5%); }
+  25%, 35.75%  { transform: translateX(-25%); }
+  37.5%, 48.25% { transform: translateX(-37.5%); }
+  50%, 60.75%  { transform: translateX(-50%); }
+  62.5%, 73.25% { transform: translateX(-62.5%); }
+  75%, 85.75%  { transform: translateX(-75%); }
+  87.5%, 98.25% { transform: translateX(-87.5%); }
+  100%         { transform: translateX(0%); }
+}
+
 .catalog-slider-caption {
   text-align: center;
   font-size: 12px;
@@ -1385,6 +1408,7 @@ body > .nav-dropdown {
   .catalog-slider { max-width: 100%; }
   .catalog-slider-track img { height: 280px; }
   .catalog-slider-track.catalog-slider-track-6 img { height: 220px; }
+  .catalog-slider-track.catalog-slider-track-8 img { height: 220px; }
   .lightbox-close { top: 12px; right: 16px; font-size: 28px; }
   .lightbox-nav { font-size: 32px; padding: 6px 10px; }
   .faq-item summary { font-size: 14.5px; padding: 16px 32px 16px 0; }
