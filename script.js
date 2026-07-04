@@ -84,4 +84,28 @@ document.addEventListener('DOMContentLoaded', function () {
     img.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     img.addEventListener('dragstart', function (e) { e.preventDefault(); });
   });
+
+  // Lightbox condivisa per galleria evoluzione
+  var evLightbox = document.getElementById('ev-lightbox');
+  var evLightboxImg = document.getElementById('ev-lightbox-img');
+  if (evLightbox && evLightboxImg) {
+    document.querySelectorAll('.evolution-item').forEach(function (item) {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        evLightboxImg.src = item.getAttribute('data-src');
+        evLightbox.style.display = 'flex';
+      });
+    });
+    evLightbox.querySelector('.lightbox-close').addEventListener('click', function (e) {
+      e.preventDefault();
+      evLightbox.style.display = 'none';
+      evLightboxImg.src = '';
+    });
+    evLightbox.addEventListener('click', function (e) {
+      if (e.target === evLightbox) {
+        evLightbox.style.display = 'none';
+        evLightboxImg.src = '';
+      }
+    });
+  }
 });
