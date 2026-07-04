@@ -534,7 +534,61 @@ body > .nav-dropdown {
   margin-bottom: 16px;
 }
 
-/* Citazione fonte storica in fondo pagina */
+/* ---------- Galleria Evoluzione ---------- */
+.evolution-series {
+  margin-bottom: 48px;
+}
+
+.evolution-series-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(227,6,19,0.5);
+}
+
+.evolution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.evolution-item {
+  display: block;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: box-shadow 0.2s;
+}
+
+.evolution-item:hover {
+  box-shadow: 0 0 18px rgba(255,255,255,0.3);
+}
+
+.evolution-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.evolution-caption {
+  background: rgba(0,0,0,0.75);
+  color: var(--light);
+  font-size: 12px;
+  text-align: center;
+  padding: 6px 8px;
+  font-family: var(--font-title);
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* ---------- Citazione fonte storica in fondo pagina ---------- */
 .source-note {
   text-align: center;
   font-size: 13px;
@@ -1305,6 +1359,8 @@ body > .nav-dropdown {
   .faq-main-image img { height: 200px; }
   .version-gallery { grid-template-columns: 1fr; }
   .version-gallery img { height: 220px; }
+  .evolution-grid { grid-template-columns: repeat(2, 1fr); }
+  .evolution-item img { height: 130px; }
   .inline-photo { max-width: 100%; }
   .catalog-slider { max-width: 100%; }
   .catalog-slider-track img { height: 280px; }
