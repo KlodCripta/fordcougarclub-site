@@ -363,6 +363,17 @@ body > .nav-dropdown {
   width: 460px;
 }
 
+/* Classe dedicata per immagini con testo scritto sopra (es. svt_home.jpg) */
+.description-image.description-image-svt-home {
+  width: 420px;
+}
+
+.description-image.description-image-svt-home img {
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+}
+
 .description-clearfix {
   clear: both;
 }
@@ -1355,6 +1366,12 @@ body > .nav-dropdown {
     height: 260px;
     object-fit: contain;
   }
+  .description-image.description-image-svt-home {
+    width: 100%;
+    max-width: 420px;
+    float: none;
+    margin: 0 auto 24px;
+  }
   .model-grid { grid-template-columns: repeat(2, 1fr); }
   .spec-layout {
     flex-direction: column;
@@ -1382,6 +1399,10 @@ body > .nav-dropdown {
     margin: 0 auto 24px;
   }
   .description-image.description-image-wide {
+    width: 100%;
+    max-width: 380px;
+  }
+  .description-image.description-image-svt-home {
     width: 100%;
     max-width: 380px;
   }
