@@ -374,6 +374,17 @@ body > .nav-dropdown {
   object-fit: contain;
 }
 
+/* Foto panoramica home (cougar_rossa.jpg con cornice integrata nel file) */
+.description-image.description-image-panoramic {
+  width: 520px;
+  background: var(--black);
+}
+
+.description-image.description-image-panoramic img {
+  height: auto;
+  object-fit: contain;
+}
+
 .description-clearfix {
   clear: both;
 }
@@ -1372,6 +1383,12 @@ body > .nav-dropdown {
     float: none;
     margin: 0 auto 24px;
   }
+  .description-image.description-image-panoramic {
+    width: 100%;
+    max-width: 560px;
+    float: none;
+    margin: 0 auto 24px;
+  }
   .model-grid { grid-template-columns: repeat(2, 1fr); }
   .spec-layout {
     flex-direction: column;
@@ -1405,6 +1422,10 @@ body > .nav-dropdown {
   .description-image.description-image-svt-home {
     width: 100%;
     max-width: 380px;
+  }
+  .description-image.description-image-panoramic {
+    width: 100%;
+    max-width: 100%;
   }
   .description-image.description-image-wide img {
     height: auto;
