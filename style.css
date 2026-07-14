@@ -1594,3 +1594,14 @@ body > .nav-dropdown {
   background-color: var(--red-dark);
   border-color: var(--red-dark);
 }
+
+.download-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.download-btn-row .download-btn {
+  margin-top: 0;
+}
