@@ -1605,3 +1605,53 @@ body > .nav-dropdown {
 .download-btn-row .download-btn {
   margin-top: 0;
 }
+
+/* ---------- Pagina Guida all'Acquisto ---------- */
+.inline-subtitle-spaced {
+  margin-top: 38px;
+}
+
+.guide-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 0 0 16px;
+}
+
+.intro-text .guide-box p {
+  margin-bottom: 10px;
+}
+
+.intro-text .guide-box p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-text .guide-box-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.club-box {
+  background: var(--card);
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin: 38px 0 8px;
+  text-align: center;
+}
+
+.intro-text .club-box p {
+  text-align: center;
+}
+
+.club-box .download-btn-row {
+  justify-content: center;
+  margin-top: 16px;
+}
