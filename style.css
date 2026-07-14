@@ -1504,3 +1504,48 @@ body > .nav-dropdown {
     display: block;
   }
 }
+
+/* ---------- Pagina Recensioni ---------- */
+.inline-subtitle.inline-subtitle-nocase {
+  text-transform: none;
+}
+
+.review-heading {
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 26px 0 12px;
+}
+
+.review-byline {
+  color: var(--light);
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin-top: 24px;
+}
+
+.ratings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+  margin: 6px 0 14px;
+}
+
+.ratings-grid ul.legal-content-ul {
+  margin-bottom: 0;
+}
+
+.rating-stars {
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 640px) {
+  .ratings-grid {
+    grid-template-columns: 1fr;
+  }
+}
