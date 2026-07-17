@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/oswald-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/oswald-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/oswald-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/oswald-700.woff2') format('woff2');
+}
+
 /* ============================================================
    FORD COUGAR CLUB ITALIA — Stylesheet
    Palette: #0a0a0a (bg), #E30613 (rosso), #ffffff (testo)
@@ -9,6 +41,7 @@
 
 :root {
   --red:      #E30613;
+  --red-text:  #f5222e;
   --red-dark: #b50010;
   --black:    #000000;
   --dark:     #111111;
@@ -177,11 +210,11 @@ body > .nav-dropdown {
 
 .nav-dropdown a:hover {
   background: var(--card);
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .nav-dropdown a.active {
-  color: var(--red);
+  color: var(--red-text);
   font-weight: 600;
 }
 
@@ -200,7 +233,7 @@ body > .nav-dropdown {
   font-family: var(--font-title);
   font-size: clamp(34px, 5vw, 52px);
   font-weight: 700;
-  color: var(--red);
+  color: var(--red-text);
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.15;
@@ -437,7 +470,7 @@ body > .nav-dropdown {
 }
 
 .description-text-full a {
-  color: var(--red);
+  color: var(--red-text);
   text-decoration: underline;
   transition: color 0.2s;
 }
@@ -448,7 +481,7 @@ body > .nav-dropdown {
 
 /* Link generico dentro testo narrativo (riusabile in tutte le pagine) */
 .text-link {
-  color: var(--red);
+  color: var(--red-text);
   text-decoration: underline;
   transition: color 0.2s;
 }
@@ -541,7 +574,7 @@ body > .nav-dropdown {
   content: '\2013';
   position: absolute;
   left: 0;
-  color: var(--red);
+  color: var(--red-text);
   font-weight: 700;
 }
 
@@ -567,7 +600,7 @@ body > .nav-dropdown {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   margin-bottom: 16px;
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(227,6,19,0.5);
@@ -779,7 +812,7 @@ body > .nav-dropdown {
 }
 
 .lightbox-close:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .lightbox-nav {
@@ -796,7 +829,7 @@ body > .nav-dropdown {
 }
 
 .lightbox-nav:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .lightbox-nav-prev { left: 8px; }
@@ -868,7 +901,7 @@ body > .nav-dropdown {
 }
 
 .video-link-highlight {
-  color: var(--red);
+  color: var(--red-text);
   font-family: var(--font-title);
   font-size: 17px;
   font-weight: 600;
@@ -962,7 +995,7 @@ body > .nav-dropdown {
 }
 
 .model-card:hover {
-  border-color: var(--red);
+  border-color: var(--red-text);
   background: #1f1f1f;
   transform: translateY(-3px);
 }
@@ -1055,7 +1088,7 @@ body > .nav-dropdown {
 }
 
 .spec-highlight-red {
-  color: var(--red) !important;
+  color: var(--red-text) !important;
   font-weight: 700;
 }
 
@@ -1074,7 +1107,7 @@ body > .nav-dropdown {
   font-family: var(--font-title);
   font-size: 17px;
   font-weight: 700;
-  color: var(--red);
+  color: var(--red-text);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 12px;
@@ -1180,7 +1213,7 @@ body > .nav-dropdown {
   transform: translateY(-50%);
   font-size: 22px;
   font-weight: 400;
-  color: var(--red);
+  color: var(--red-text);
   transition: transform 0.25s;
   line-height: 1;
 }
@@ -1190,7 +1223,7 @@ body > .nav-dropdown {
 }
 
 .faq-item summary:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .faq-answer {
@@ -1293,7 +1326,7 @@ body > .nav-dropdown {
 }
 
 .footer-social a:hover {
-  color: var(--red);
+  color: var(--red-text);
   transform: translateY(-2px);
 }
 
@@ -1313,7 +1346,7 @@ body > .nav-dropdown {
 }
 
 .footer-text a:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .footer-legal {
@@ -1329,7 +1362,7 @@ body > .nav-dropdown {
 }
 
 .footer-legal a:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .footer-legal-sep {
@@ -1539,7 +1572,7 @@ body > .nav-dropdown {
 }
 
 .rating-stars {
-  color: var(--red);
+  color: var(--red-text);
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -1632,7 +1665,7 @@ body > .nav-dropdown {
   font-family: var(--font-title);
   font-size: 14px;
   font-weight: 700;
-  color: var(--red);
+  color: var(--red-text);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 10px;
@@ -1654,4 +1687,8 @@ body > .nav-dropdown {
 .club-box .download-btn-row {
   justify-content: center;
   margin-top: 16px;
+}
+
+picture {
+  display: contents;
 }
